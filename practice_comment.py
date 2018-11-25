@@ -27,3 +27,10 @@ for review in data:
 		filter2.append(len(review))
 print(len(filter1), 'reviews have more than 100 characters')
 print(len(filter2), 'reviews have up to 100 characters')
+
+# filter review wiht "good"
+filter_good = []
+for review in data:
+	if 'is good' in review:
+		filter_good.append(review)
+print(len(filter_good), 'reviews with "is good" in it')
