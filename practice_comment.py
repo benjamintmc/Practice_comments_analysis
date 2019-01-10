@@ -18,7 +18,7 @@ with open('reviews.txt', 'r', encoding='utf-8-sig') as f:
 	for line in f:
 		reviews.append(line)
 for review in reviews:
-	words = review.strip().split(' ')
+	words = review.strip().split()
 	for word in words:
 		if word in wc:
 			wc[word] += 1
