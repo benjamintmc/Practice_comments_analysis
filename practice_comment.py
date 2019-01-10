@@ -37,6 +37,7 @@ while True:
 		break
 	else:
 		print('This word has never shown in the reviews...')
+	print('Thank you for using this function!')
 
 
 # # calculat the average length of reviews
