@@ -1,44 +1,43 @@
 # comment/review analytic
+import time
+import progressbar
 
 reviews = []
-# def open_file(filename):	
-# 	count = 0
-# 	with open(filename, 'r') as f:
-# 	    for line in f:
-# 	        data.append(line)
-# 	        count += 1
-# 	        if count % 10000 == 0:
-# 	            print(len(data) / 10000, '%')
-
-# open_file('reviews.txt')
-
-wc = {} # word count
-
+count = 0
+bar = progressbar.ProgressBar(max_value=1000000)
 with open('reviews.txt', 'r', encoding='utf-8-sig') as f:
 	for line in f:
 		reviews.append(line)
-for review in reviews:
-	words = review.strip().split()
-	for word in words:
-		if word in wc:
-			wc[word] += 1
-		else:
-			wc[word] = 1
-# for key in wc:
-# 	if wc[key] >= 100:
-# 		print(key, wc[key])
+		count += 1
+		bar.update(count)
+print('\n', count, 'reviews in total.')
 
-# searching function
-while True:
-	search = input('How many times have your word appers in the reviews? ')
-	if search in wc:
-		print(search, 'have appeared', wc[search], 'times.')
-	elif search == '_DONE':
-		break
-	else:
-		print('This word has never shown in the reviews...')
-	print('Thank you for using this function!')
+# # word count function
+# wc = {} # word count
+# start_time = time.time()
+# for review in reviews:
+# 	words = review.strip().split()
+# 	for word in words:
+# 		if word in wc:
+# 			wc[word] += 1
+# 		else:
+# 			wc[word] = 1
+# # for key in wc:
+# # 	if wc[key] >= 100:
+# # 		print(key, wc[key])
+# end_time = time.time()
+# print(end_time - start_time)
 
+# # searching function
+# while True:
+# 	search = input('\nHow many times have your word appers in the reviews? ')
+# 	if search in wc:
+# 		print(search, 'have appeared', wc[search], 'times.')
+# 	elif search == '_DONE':
+# 		break
+# 	else:
+# 		print('This word has never shown in the reviews...')
+# 	print('Thank you for using this function!')
 
 # # calculat the average length of reviews
 # total_len = 0
